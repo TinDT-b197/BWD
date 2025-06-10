@@ -1,0 +1,402 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f9f8fc;
+    color: #333;
+}
+
+.header {
+    background-color: #7a4de7;
+    color: rgb(255, 255, 255);
+    padding: 40px 20px;
+    text-align: center;
+}
+.logo{
+    height: 100px;
+}
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    margin: 40px 0 20px 0;
+}
+
+.main-layout {
+    display: flex;
+    gap: 20px;
+    padding: 30px 20px;
+    justify-content: center;
+}
+
+.left,
+.right {
+    width: 100px;
+    min-height: 100%;
+    background-color: #ece6fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.left img,
+.right img {
+    width: 800px;
+    height: auto;
+}
+
+.content {
+    flex: 1;
+    max-width: 10000px;
+}
+
+.search-box {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.search-input {
+  padding: 10px 12px 10px 36px; /* Padding trái để chừa chỗ cho icon */
+  font-size: 16px;
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 16px;
+}
+.options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.option {
+    padding-top: 20px;
+    text-align: center;
+}
+.option-text{
+    font-size: 20px;
+}
+.option-icon {
+    background-color: #893fdf;
+    border-radius: 50%;
+    padding: 20px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    margin: auto;
+}
+.option-icon:hover {
+    background-color: rgb(160, 0, 0);
+}
+.carousel-window {
+    width: 700px;
+    /* chỉ hiển thị vừa 3 item */
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.carousel-window::before,
+.carousel-window::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    /* Độ rộng của vùng mờ */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    /* Mờ dần từ trái */
+    z-index: 1;
+}
+
+.carousel-window::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 2.8), rgba(255, 255, 255, 0));
+}
+
+.carousel-window::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 2.8), rgba(255, 255, 255, 0));
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.food-list,
+.restaurant-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.food-item,
+.restaurant-item {
+    background-color: white;
+    border-radius: 12px;
+    min-width: 200px;
+    flex-shrink: 0;
+    padding: 5px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.food-item.visible,
+.restaurant-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.food-item img,
+.restaurant-item img {
+    width: 180px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.button {
+    margin-top: 10px;
+    background-color: #7a4de7;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.food-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    /* Nhỏ hơn để gọn */
+    background-color: white;
+    color: #7a4de7;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow:hover {
+    background-color: #f2eeff;
+    transform: translateY(-50%) scale(1.1);
+    /* Nhẹ nhàng phóng to khi hover */
+}
+
+.arrow.left {
+    left: 500px;
+}
+
+.arrow.right {
+    right: 500px;
+}
+
+
+.food-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #7a4de7;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #ece6fc;
+}
+
+/* ============ Responsive tablet (≤ 992px) ============ */
+@media (max-width: 992px) {
+  .main-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .left img,
+  .right img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .carousel-window {
+    width: 90%;
+  }
+
+  .search-input {
+    width: 300px;
+  }
+
+  .navbar a {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+}
+
+/* ============ Responsive mobile & iPhone 14 Pro Max (≤ 430px) ============ */
+@media (max-width: 576px) {
+  .header {
+    padding: 30px 15px;
+  }
+
+  .logo {
+    height: 80px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin: 30px 0 15px 0;
+  }
+
+  .search-input {
+    width: 90vw;
+    font-size: 14px;
+    padding: 8px 10px 8px 32px;
+  }
+
+  .search-icon {
+    left: 10px;
+    font-size: 14px;
+  }
+
+  .options {
+  display: flex;
+  flex-wrap: nowrap;          /* không cho xuống hàng */
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.option {
+  flex: 1 1 100px;             /* co giãn đều */
+  max-width: 120px;           /* giới hạn chiều rộng mỗi icon */
+  text-align: center;
+}
+
+  .option-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    padding: 15px;
+  }
+
+  .option-text {
+    font-size: 16px;
+  }
+
+  .food-item,
+  .restaurant-item {
+    width: 160px;
+  }
+
+  .food-item img,
+  .restaurant-item img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .carousel-window {
+    width: 100%;
+  }
+
+  .arrow {
+     display: none;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .navbar a {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+  .carousel-window {
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  scroll-snap-align: start;
+}
+
+.food-item {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+}

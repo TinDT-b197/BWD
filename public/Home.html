@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grappee</title>
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body id="home">
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">🏠 Trang chủ</a></li>
+      <li><a>🛒 Giỏ hàng</a></li>
+      <li><a href="#contactSection">ℹ️ Giới thiệu</a></li>
+      <li><a href="#contactSection">📞 Liên hệ</a></li>
+      <li><a href="login.html">👤 Đăng nhập</a></li>
+    </ul>
+  </nav>
+
+  <div class="header">
+    <div class="logo-title">
+      <img src="logo/nho.png" alt="Logo Grappee" class="logo">
+      <h1 class="title">Chào mừng đến với Grappee</h1>
+    </div>
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input class="search-input" type="text" placeholder="Bạn muốn ăn gì hôm nay?">
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="options">
+      <div class="option">
+        <div class="option-icon">🤮</div>
+        <div class="option-text">Tôi đang stress</div>
+      </div>
+      <div class="option">
+        <div class="option-icon">🏋️</div>
+        <div class="option-text">Ăn healthy</div>
+      </div>
+      <div class="option" id="Chatbot">
+        <div class="option-icon">🤖</div>
+        <div class="option-text">ChatBot</div>
+      </div>
+      <div class="option" id="Tinder">
+        <div class="option-icon">🔥</div>
+        <div class="option-text">Fooder Tinder</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Món ăn nổi bật</h2>
+  <div class="food-carousel">
+    <div class="arrow left" onclick="prevSlide()">&#10094;</div> 
+    <div class="carousel-window">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="food-item">
+          <img src="Image/bánh căn tôm.jpg" alt="Banh căn tôm">
+          <div>bánh căn tôm</div>
+          <button class="button">Đặt ngay</button>
+        </div>
+        <div class="food-item">
+          <img src="Image/phở bò.jpg" alt="Phở bò">
+          <div>Phở bò</div>
+          <button class="button">Đặt ngay</button>
+        </div>
+        <div class="food-item">
+          <img src="Image/bánh lọc.jpg" alt="Bánh lọc">
+          <div>bánh lọc</div>
+          <button class="button">Đặt ngay</button>
+        </div>
+        <div class="food-item">
+          <img src="Image/cơm tấm.jpg" alt="Cơm tấm">
+          <div>Cơm tấm</div>
+          <button class="button">Đặt ngay</button>
+        </div>
+        <div class="food-item">
+          <img src="Image/tra sua.jpg" alt="Trà sữa">
+          <div>Trà sữa</div>
+          <button class="button">Đặt ngay</button>
+        </div>
+        <div class="food-item">
+          <img src="Image/cút lộn xào me.jpg" alt="cút lộn xào me">
+          <div>Cút lộn xào me</div>
+          <button class="button">Đặt ngay</button>
+        </div>
+        <div class="food-item">
+          <img src="Image/nước ép dưa hấu.jpg" alt="nước ép dưa hấu">
+          <div>Nước ép dưa hấu</div>
+          <button class="button">Đặt ngay</button>
+        </div>
+      </div>
+    </div>
+    <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+  </div>
+
+  <div class="content">
+    <h2 class="section-title">Quán ăn gần bạn</h2>
+    <div class="restaurant-list">
+      <div class="restaurant-item">
+        <img src="Image/bánh mì.jpg" alt="Quán Ngon">
+        <div><strong>Quán Ngon</strong></div>
+        <div>15 mnt+ | $$$</div>
+        <button class="button">Đặt ngay</button>
+      </div>
+      <div class="restaurant-item">
+        <img src="Image/cá kho.jpg" alt="Ẩm Thực Việt">
+        <div><strong>Ẩm Thực Việt</strong></div>
+        <div>20 mnt+ | $$$</div>
+        <button class="button">Đặt ngay</button>
+      </div>
+      <div class="restaurant-item">
+        <img src="Image/bánh lọc.jpg" alt="Nhà Hàng Sài Gòn">
+        <div><strong>Nhà Hàng Sài Gòn</strong></div>
+        <div>25 mnt+ | $$$</div>
+        <button class="button">Đặt ngay</button>
+      </div>
+    </div>
+  </div>
+
+  <footer id="contactSection" style="background-color:#6a4fb9; color:white; padding:40px 20px; text-align:center; margin-top:50px;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h2>Giới thiệu</h2>
+      <p>Grappee là nền tảng đặt đồ ăn trực tuyến hàng đầu, mang đến cho bạn những món ăn ngon, tiện lợi và nhanh chóng.</p>
+      
+      <h2>Liên hệ</h2>
+      <p>Email: support@grappee.com</p>
+      <p>Điện thoại: 0123 456 789</p>
+      <p>Địa chỉ: 123 Đường Ẩm Thực, Quận Hải Châu, Đà Nẵng</p>
+    </div>
+  </footer>
+
+  <script src="js/home.js"></script>
+</body>
+</html>

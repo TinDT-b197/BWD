@@ -1,0 +1,22 @@
+const { OpenAI } = require("openai");
+
+const openai = new OpenAI({
+  baseURL: "https://openrouter.ai/api/v1",
+  apiKey: "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", // Dán API key OpenRouter vào đây
+});
+
+async function askGPT(message) {
+  try {
+    const chatCompletion = await openai.chat.completions.create({
+      model: "openai/gpt-3.5-turbo", // hoặc "mistralai/mistral-7b-instruct"
+      messages: [{ role: "user", content: message }],
+    });
+
+    return chatCompletion.choices[0].message.content;
+  } catch (error) {
+    console.error("Lỗi khi gọi GPT (OpenRouter):", error);
+    return "Xin lỗi, có lỗi xảy ra khi gọi GPT.";
+  }
+}
+
+module.exports = { askGPT };

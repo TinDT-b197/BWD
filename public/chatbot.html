@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chatbot Gợi Ý Món Ăn - Messenger Style</title>
+  <link rel="stylesheet" href="css/chatbot.css" />
+</head>
+<body>
+  <a href="Home.html" class="back-home">
+  <i class="fa-solid fa-arrow-left"></i> Back to Home
+</a>
+  <div class="container">
+    <div class="left-column">
+      <img src="logo/giao diện bot.png" alt="Logo GPT" />
+    </div>
+    <div class="right-column">
+      <div class="chat-header">Chatbot Gợi Ý Món Ăn</div>
+
+      <!-- Gợi ý nhanh -->
+      <div class="suggestions" id="suggestions">
+        <button>Tôi buồn quá, tôi nên ăn gì nhỉ?</button>
+        <button>Tôi sắp muộn học/ đi làm, tôi nên ăn gì nhỉ?</button>
+        <button>Tôi muốn ăn món gì healthy</button>
+      </div>
+
+      <!-- Khu vực chat -->
+      <div class="chat-messages" id="chatMessages"></div>
+
+      <!-- Input -->
+      <div class="chat-input">
+        <textarea id="userInput" placeholder="Nhập mô tả hoặc yêu cầu món ăn..."></textarea>
+        <button id="sendBtn">Gửi</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

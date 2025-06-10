@@ -1,0 +1,189 @@
+body {
+  font-family: sans-serif;
+  background: linear-gradient(to right, #7a4de7, #d885ca);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.card-container {
+  position: relative;
+  width: 500px;
+  height: 650px;
+  padding-top: 20px;
+  perspective: 1000px;
+}
+
+.card {
+  position: absolute;
+  width: 80%;
+  height: 85%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.buttons {
+  margin-right: 50px;
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.buttons button {
+  font-size: 24px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.navbar {
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  width: 98%;
+  z-index: 100;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #7a4de7;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #7a4de7;
+}
+
+footer {
+  background-color: linear-gradient(to right, #7a4de7, #d885ca);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+footer div {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ========================
+   Responsive cho Tablet
+   ======================== */
+@media (max-width: 992px) {
+  .card-container {
+    width: 400px;
+    height: 550px;
+  }
+
+  .card {
+    font-size: 20px;
+    padding: 15px;
+  }
+
+  .buttons {
+    margin-top: 60px;
+    gap: 16px;
+  }
+
+  .buttons button {
+    font-size: 20px;
+    padding: 8px 16px;
+  }
+
+  .navbar a {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+}
+
+/* ========================
+   Responsive cho Mobile
+   ======================== */
+@media screen and (max-width: 430px) {
+  .card-container {
+    width: 240px;
+    height: 350px;
+  }
+
+  .card {
+    font-size: 15px;
+    padding: 20px;
+  }
+
+  .buttons {
+    margin-top: 60px;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-left: 50px;
+  }
+
+  .buttons button {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+  .navbar {
+    padding: 10px 5px;
+  }
+  .navbar ul {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .navbar a {
+    font-size: 15px;
+    padding: 6px 10px;
+  }
+
+  footer {
+    padding: 25px 12px;
+  }
+
+  footer div {
+    font-size: 13px;
+  }
+}
