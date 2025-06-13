@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grapee Food Menu - Thương mại hóa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe5b4);
+      color: #333;
+    }
+    .header {
+      background: linear-gradient(90deg, #8e44ad, #f39c12);
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      flex-wrap: wrap;
+    }
+    .header img {
+      height: 60px;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #f39c12;
+      padding: 10px;
+    }
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .menu a:hover {
+      color: #8e44ad;
+    }
+    .submenu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+    .submenu-item {
+      margin: 15px;
+      text-align: center;
+      background: #fff3e0;
+      border-radius: 15px;
+      padding: 10px;
+      width: 120px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .submenu-item:hover {
+      transform: scale(1.1);
+      background: #ffe0b2;
+    }
+    .submenu-item img {
+      width: 80px;
+      border-radius: 50%;
+      background: #fff;
+      padding: 5px;
+    }
+    .product-section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 30px;
+      background-color: #fafafa;
+    }
+    .product {
+      background: linear-gradient(145deg, #fffacd, #ffe5b4);
+      margin: 20px;
+      padding: 15px;
+      border-radius: 20px;
+      text-align: center;
+      width: 280px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .product:hover {
+      transform: translateY(-10px);
+    }
+    .product img {
+      width: 250px;
+      border-radius: 15px;
+    }
+    .add-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #8e44ad;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .add-btn:hover {
+      background-color: #f39c12;
+    }
+    .cart-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(45deg, #f39c12, #d35400);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 18px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+    .language {
+      position: absolute;
+      top: 20px;
+      right: 100px;
+    }
+    @media (max-width: 600px) {
+      .product {width: 90%;}
+      .submenu-item {width: 40%;}
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="https://i.imgur.com/NyV9ogK.png" alt="Grapee" />
+    <div class="language">
+      <button onclick="changeLang('vi')">VN</button>
+      <button onclick="changeLang('en')">EN</button>
+    </div>
+  </div>
+  <div class="menu">
+    <a href="#">Trang chủ</a>
+    <a href="#">Giới thiệu</a>
+    <a href="#">Thực đơn</a>
+    <a href="#">Khuyến mãi</a>
+    <a href="#">Tuyển dụng</a>
+    <a href="#">Liên hệ</a>
+  </div>
+  <div class="submenu">
+    <div class="submenu-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Special">
+      <p>Món đặc sắc</p>
+    </div>
+    <div class="submenu-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Chicken">
+      <p>Gà giòn vui vẻ</p>
+    </div>
+  </div>
+  <div class="product-section" id="product-section">
+    <!-- Sản phẩm sẽ tự động load từ JS -->
+  </div>
+  <div class="cart-button" onclick="showCart()">🛒 <span id="cart-count">0</span> món</div>
+  <script>
+    const products = [
+      {name: 'Combo Family', image: 'https://i.imgur.com/We6V9PB.png'},
+      {name: 'Combo Cheese Burger', image: 'https://i.imgur.com/jL2e2VJ.png'},
+      {name: 'Combo Gà Nướng', image: 'https://i.imgur.com/x7UO4Dd.png'},
+      {name: 'Pizza Hải Sản', image: 'https://i.imgur.com/oX1eGQy.png'}
+    ];
+
+    let cart = JSON.parse(localStorage.getItem('grapeeCart')) || [];
+    document.getElementById('cart-count').innerText = cart.length;
+
+    const section = document.getElementById('product-section');
+    products.forEach(item => {
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product';
+      productDiv.innerHTML = `
+        <img src="${item.image}" alt="${item.name}">
+        <p>${item.name}</p>
+        <button class="add-btn" onclick="addToCart('${item.name}')">Thêm vào giỏ</button>
+      `;
+      section.appendChild(productDiv);
+    });
+
+    function addToCart(item) {
+      cart.push(item);
+      localStorage.setItem('grapeeCart', JSON.stringify(cart));
+      document.getElementById('cart-count').innerText = cart.length;
+    }
+    function showCart() {
+      let countMap = {};
+      cart.forEach(item => countMap[item] = (countMap[item]||0)+1);
+      let summary = Object.entries(countMap).map(([k,v])=>`${k} (${v})`).join("\n");
+      if(summary) alert("Giỏ hàng của bạn:\n"+summary);
+      else alert("Giỏ hàng trống");
+    }
+    function changeLang(lang) {
+      if(lang==='vi') alert('Đã chuyển sang tiếng Việt');
+      else alert('Switched to English');
+    }
+  </script>
+</body>
+</html>
