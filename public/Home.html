@@ -8,128 +8,185 @@
 </head>
 <body id="home">
 
-  <nav class="navbar">
-    <ul>
-      <li><a href="#home">🏠 Trang chủ</a></li>
-      <li><a>🛒 Giỏ hàng</a></li>
-      <li><a href="#contactSection">ℹ️ Giới thiệu</a></li>
-      <li><a href="#contactSection">📞 Liên hệ</a></li>
-      <li><a href="login.html">👤 Đăng nhập</a></li>
-    </ul>
-  </nav>
-
-  <div class="header">
-    <div class="logo-title">
-      <img src="logo/nho.png" alt="Logo Grappee" class="logo">
-      <h1 class="title">Chào mừng đến với Grappee</h1>
+  <!-- Header -->
+  <header>
+    <div class="container">
+    <div class="navbar">
+    <div class="logo">
+      <a href="Home.html"> <img src="logo/Logo demo.png" width="100" alt=""></a>   
     </div>
-    <div class="search-box">
-      <span class="search-icon">🔍</span>
-      <input class="search-input" type="text" placeholder="Bạn muốn ăn gì hôm nay?">
+    <nav>
+      <ul id="MenuItems">            
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Menu.html">Product</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Account</a></li>
+      </ul>
+    </nav>
+    <a href="cart.html"><img src="logo/cart.png" width="30px" height="30px" alt=""></a> 
+     </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <h1>Dazzling Pets <br> Where Love and Care Meet Fur-ever!</h1>
+                <p>Unleash the Joyful Journey with Your Beloved Companions!</p>
+                <a href="product.html" class="button">Explore Now &#8594;</a>
+            </div>
+            <div class="col-2">
+                <img src="logo/logo bún bò.png" alt="">
+            </div>
+        </div>
     </div>
-  </div>
+  </header>
 
-  <div class="content">
-    <div class="options">
-      <div class="option">
-        <div class="option-icon">🤮</div>
-        <div class="option-text">Tôi đang stress</div>
-      </div>
-      <div class="option">
-        <div class="option-icon">🏋️</div>
-        <div class="option-text">Ăn healthy</div>
-      </div>
-      <div class="option" id="Chatbot">
-        <div class="option-icon">🤖</div>
-        <div class="option-text">ChatBot</div>
-      </div>
-      <div class="option" id="Tinder">
-        <div class="option-icon">🔥</div>
-        <div class="option-text">Fooder Tinder</div>
-      </div>
+
+  <!-- Intro Section -->
+  <section class="intro">
+    <div class="intro-content">
+      <h2>Grappee, Xin Chào</h2>
+      <p>
+        Chúng tôi là Grappee, nền tảng đặt đồ ăn trực tuyến hàng đầu tại Việt Nam. Với sứ mệnh mang đến niềm vui ẩm thực cho mọi gia đình Việt, chúng tôi cung cấp những món ăn chất lượng, dịch vụ tuyệt vời, và sự tiện lợi với mức giá hợp lý. Hãy đến và thưởng thức ngay hôm nay!
+      </p>
+      <button class="cta-button">Đặt hàng</button>
     </div>
-  </div>
-
-  <h2 class="section-title">Món ăn nổi bật</h2>
-  <div class="food-carousel">
-    <div class="arrow left" onclick="prevSlide()">&#10094;</div> 
-    <div class="carousel-window">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="food-item">
-          <img src="Image/bánh căn tôm.jpg" alt="Banh căn tôm">
-          <div>bánh căn tôm</div>
-          <button class="button">Đặt ngay</button>
-        </div>
-        <div class="food-item">
-          <img src="Image/phở bò.jpg" alt="Phở bò">
-          <div>Phở bò</div>
-          <button class="button">Đặt ngay</button>
-        </div>
-        <div class="food-item">
-          <img src="Image/bánh lọc.jpg" alt="Bánh lọc">
-          <div>bánh lọc</div>
-          <button class="button">Đặt ngay</button>
-        </div>
-        <div class="food-item">
-          <img src="Image/cơm tấm.jpg" alt="Cơm tấm">
-          <div>Cơm tấm</div>
-          <button class="button">Đặt ngay</button>
-        </div>
-        <div class="food-item">
-          <img src="Image/tra sua.jpg" alt="Trà sữa">
-          <div>Trà sữa</div>
-          <button class="button">Đặt ngay</button>
-        </div>
-        <div class="food-item">
-          <img src="Image/cút lộn xào me.jpg" alt="cút lộn xào me">
-          <div>Cút lộn xào me</div>
-          <button class="button">Đặt ngay</button>
-        </div>
-        <div class="food-item">
-          <img src="Image/nước ép dưa hấu.jpg" alt="nước ép dưa hấu">
-          <div>Nước ép dưa hấu</div>
-          <button class="button">Đặt ngay</button>
-        </div>
-      </div>
+    <div class="hero-image-container">
+      <img src="Image/1.avif" alt="Hero Banner" class="hero-image">
     </div>
-    <div class="arrow right" onclick="nextSlide()">&#10095;</div>
-  </div>
+  </section>
 
-  <div class="content">
-    <h2 class="section-title">Quán ăn gần bạn</h2>
-    <div class="restaurant-list">
-      <div class="restaurant-item">
-        <img src="Image/bánh mì.jpg" alt="Quán Ngon">
-        <div><strong>Quán Ngon</strong></div>
-        <div>15 mnt+ | $$$</div>
+  <!-- Featured Items -->
+  <section id="menu" class="featured-items">
+    <h2>Món ăn nổi bật</h2>
+    <div class="food-grid">
+      <div class="food-item">
+        <img src="Image/bánh căn tôm.jpg" alt="Bánh căn tôm">
+        <h3>Bánh căn tôm</h3>
         <button class="button">Đặt ngay</button>
       </div>
-      <div class="restaurant-item">
-        <img src="Image/cá kho.jpg" alt="Ẩm Thực Việt">
-        <div><strong>Ẩm Thực Việt</strong></div>
-        <div>20 mnt+ | $$$</div>
+      <div class="food-item">
+        <img src="Image/phở bò.jpg" alt="Phở bò">
+        <h3>Phở bò</h3>
         <button class="button">Đặt ngay</button>
       </div>
-      <div class="restaurant-item">
-        <img src="Image/bánh lọc.jpg" alt="Nhà Hàng Sài Gòn">
-        <div><strong>Nhà Hàng Sài Gòn</strong></div>
-        <div>25 mnt+ | $$$</div>
+      <div class="food-item">
+        <img src="Image/bánh lọc.jpg" alt="Bánh lọc">
+        <h3>Bánh lọc</h3>
+        <button class="button">Đặt ngay</button>
+      </div>
+      <div class="food-item">
+        <img src="Image/cơm tấm.jpg" alt="Cơm tấm">
+        <h3>Cơm tấm</h3>
         <button class="button">Đặt ngay</button>
       </div>
     </div>
-  </div>
+  </section>
 
-  <footer id="contactSection" style="background-color:#6a4fb9; color:white; padding:40px 20px; text-align:center; margin-top:50px;">
-    <div style="max-width: 800px; margin: 0 auto;">
-      <h2>Giới thiệu</h2>
-      <p>Grappee là nền tảng đặt đồ ăn trực tuyến hàng đầu, mang đến cho bạn những món ăn ngon, tiện lợi và nhanh chóng.</p>
-      
-      <h2>Liên hệ</h2>
-      <p>Email: support@grappee.com</p>
-      <p>Điện thoại: 0123 456 789</p>
-      <p>Địa chỉ: 123 Đường Ẩm Thực, Quận Hải Châu, Đà Nẵng</p>
+  <!-- Today Eat Section -->
+  <section class="today-eat">
+    <div class="today-eat-content">
+      <h2>Hôm Nay Ăn Gì?</h2>
+      <p>Thực đơn Grappee đa dạng và phong phú, có rất nhiều sự lựa chọn cho bạn, gia đình và bạn bè.</p>
     </div>
-  </footer>
+    <div class="today-eat-grid">
+      <div class="food-item">
+        <div class="image-container">
+          <img src="Image/ga-gion.jpg" alt="Gà giòn vui vẻ">
+          <div class="overlay">
+            <h3>Gà Giòn Vui Vẻ</h3>
+            <button class="cta-button">Đặt hàng</button>
+          </div>
+        </div>
+      </div>
+      <div class="food-item">
+        <div class="image-container">
+          <img src="Image/ga-sot-cay.jpg" alt="Gà sốt cay">
+          <div class="overlay">
+            <h3>Gà Sốt Cay</h3>
+            <button class="cta-button">Đặt hàng</button>
+          </div>
+        </div>
+      </div>
+      <div class="food-item">
+        <div class="image-container">
+          <img src="Image/my-y.jpg" alt="Mỳ Ý sốt bò bằm">
+          <div class="overlay">
+            <h3>Mỳ Ý Sốt Bò Bằm</h3>
+            <button class="cta-button">Đặt hàng</button>
+          </div>
+        </div>
+      </div>
+      <div class="food-item">
+        <div class="image-container">
+          <img src="Image/bun chả.jpg" alt="Món tráng miệng">
+          <div class="overlay">
+            <h3>Món Tráng Miệng</h3>
+            <button class="cta-button">Đặt hàng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="logo/logo-paypal.png" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="logo/logo-coca-cola.png" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="logo/logo-vku.png" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="logo/logo-shbet.png" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="logo/logo apple.jpg" alt="">
+                </div>
+            </div>
+        </div>
+</div>
+  <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and IOS mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="img/play-store.png" alt="">
+                        <img src="img/app-store.png" alt="">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                  <img src="logo/Logo demo.png" ">
+                    <p>Our aim is to make the fun and benefits of pets accessible to many people in a sustainable way.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2025</p>
+        </div>
+    </div>
 
   <script src="js/home.js"></script>
 </body>

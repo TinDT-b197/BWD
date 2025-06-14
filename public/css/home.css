@@ -1,248 +1,39 @@
+/* Tổng thể */
 body {
     margin: 0;
     font-family: "Segoe UI", sans-serif;
-    background-color: #f9f8fc;
-    color: #333;
+    background-color: #fff8f0; /* Tông màu ấm giống Jollibee */
+    color: #dfc8c8;
+}
+nav {
+    flex:1;
+    text-align: right;
 }
 
-.header {
-    background-color: #7a4de7;
-    color: rgb(255, 255, 255);
-    padding: 40px 20px;
-    text-align: center;
-}
-.logo{
-    height: 100px;
-}
-.section-title {
-    text-align: center;
-    font-size: 24px;
-    margin: 40px 0 20px 0;
+nav ul {
+    display: inline-block;
+    list-style-type: none;
 }
 
-.main-layout {
-    display: flex;
-    gap: 20px;
-    padding: 30px 20px;
-    justify-content: center;
+nav ul li {
+   display: inline-block;
+   margin-right: 20px;
 }
 
-.left,
-.right {
-    width: 100px;
-    min-height: 100%;
-    background-color: #ece6fc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
+a {
+    text-decoration: none;
+    color:#000000;
 }
 
-.left img,
-.right img {
-    width: 800px;
-    height: auto;
+p {
+    color :#555;
 }
-
-.content {
-    flex: 1;
-    max-width: 10000px;
-}
-
-.search-box {
-  position: relative;
-  display: inline-block;
-  margin-top: 20px;
-}
-
-.search-input {
-  padding: 10px 12px 10px 36px; /* Padding trái để chừa chỗ cho icon */
-  font-size: 16px;
-  width: 400px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-
-.search-icon {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #888;
-  font-size: 16px;
-}
-.options {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.option {
-    padding-top: 20px;
-    text-align: center;
-}
-.option-text{
-    font-size: 20px;
-}
-.option-icon {
-    background-color: #893fdf;
-    border-radius: 50%;
-    padding: 20px;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 35px;
-    margin: auto;
-}
-.option-icon:hover {
-    background-color: rgb(160, 0, 0);
-}
-.carousel-window {
-    width: 700px;
-    /* chỉ hiển thị vừa 3 item */
-    overflow: hidden;
-    position: relative;
-    margin: auto;
-}
-
-.carousel-window::before,
-.carousel-window::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50px;
-    /* Độ rộng của vùng mờ */
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
-    /* Mờ dần từ trái */
-    z-index: 1;
-}
-
-.carousel-window::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 2.8), rgba(255, 255, 255, 0));
-}
-
-.carousel-window::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 2.8), rgba(255, 255, 255, 0));
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.3s ease;
-}
-
-.food-list,
-.restaurant-list {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.food-item,
-.restaurant-item {
-    background-color: white;
-    border-radius: 12px;
-    min-width: 200px;
-    flex-shrink: 0;
-    padding: 5px;
-    width: 180px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.food-item.visible,
-.restaurant-item.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.food-item img,
-.restaurant-item img {
-    width: 180px;
-    height: 200px;
-    border-radius: 10px;
-}
-
-.button {
-    margin-top: 10px;
-    background-color: #7a4de7;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.food-carousel {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slider-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    /* Nhỏ hơn để gọn */
-    background-color: white;
-    color: #7a4de7;
-    padding: 8px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    z-index: 2;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.arrow:hover {
-    background-color: #f2eeff;
-    transform: translateY(-50%) scale(1.1);
-    /* Nhẹ nhàng phóng to khi hover */
-}
-
-.arrow.left {
-    left: 500px;
-}
-
-.arrow.right {
-    right: 500px;
-}
-
-
-.food-item {
-    position: relative;
-    overflow: hidden;
-}
-
+/* Header */
 .navbar {
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+
 }
 
 .navbar ul {
@@ -255,148 +46,433 @@ body {
     align-items: center;
 }
 
-.navbar li {
-    display: inline;
-}
-
 .navbar a {
     text-decoration: none;
-    color: #7a4de7;
+    color: #290505;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     padding: 8px 16px;
     border-radius: 20px;
     transition: background-color 0.3s ease;
 }
 
 .navbar a:hover {
-    background-color: #ece6fc;
+    background-color: #ff5733; /* Màu đỏ nhạt khi hover */
 }
 
-/* ============ Responsive tablet (≤ 992px) ============ */
-@media (max-width: 992px) {
-  .main-layout {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .left img,
-  .right img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-  }
-
-  .carousel-window {
-    width: 90%;
-  }
-
-  .search-input {
-    width: 300px;
-  }
-
-  .navbar a {
-    font-size: 18px;
-    padding: 6px 12px;
-  }
+/* Hero Section */
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
 }
 
-/* ============ Responsive mobile & iPhone 14 Pro Max (≤ 430px) ============ */
-@media (max-width: 576px) {
-  .header {
-    padding: 30px 15px;
-  }
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
 
-  .logo {
-    height: 80px;
-  }
-
-  .section-title {
+.hero-content p {
     font-size: 20px;
-    margin: 30px 0 15px 0;
-  }
-
-  .search-input {
-    width: 90vw;
-    font-size: 14px;
-    padding: 8px 10px 8px 32px;
-  }
-
-  .search-icon {
-    left: 10px;
-    font-size: 14px;
-  }
-
-  .options {
-  display: flex;
-  flex-wrap: nowrap;          /* không cho xuống hàng */
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
-.option {
-  flex: 1 1 100px;             /* co giãn đều */
-  max-width: 120px;           /* giới hạn chiều rộng mỗi icon */
-  text-align: center;
+.cta-button {
+    background-color: #ff1e00;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
 }
 
-  .option-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 28px;
-    padding: 15px;
-  }
+.cta-button:hover {
+    background-color: #ff5733;
+}
 
-  .option-text {
-    font-size: 16px;
-  }
+/* Hero Section - Adjust Hero Image */
+.hero-image-container {
+    text-align: center; /* Căn giữa ảnh */
+    margin-top: 20px; /* Thêm khoảng cách giữa nội dung và ảnh */
+}
 
-  .food-item,
-  .restaurant-item {
-    width: 160px;
-  }
+.hero-image {
+    max-width: 80%; /* Giới hạn chiều rộng của ảnh */
+    height: auto; /* Đảm bảo ảnh giữ tỷ lệ */
+    border-radius: 12px; /* Bo góc ảnh */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng đổ bóng */
+}
 
-  .food-item img,
-  .restaurant-item img {
-    width: 160px;
-    height: 160px;
-  }
+/* Featured Items */
+.featured-items {
+    padding: 50px 20px;
+    text-align: center;
+}
 
-  .carousel-window {
-    width: 100%;
-  }
+.featured-items h2 {
+    font-size: 36px;
+    color: #ff1e00;
+    margin-bottom: 30px;
+}
 
-  .arrow {
-     display: none;
-  }
-
-  .navbar ul {
+.food-grid {
+    display: flex;
+    gap: 20px;
     flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .navbar a {
-    font-size: 16px;
-    padding: 6px 10px;
-  }
-  .carousel-window {
-  width: 100%;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 10px;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 20px;
-  scroll-snap-align: start;
+    justify-content: center;
 }
 
 .food-item {
-  scroll-snap-align: start;
-  flex-shrink: 0;
+    background-color: #fff;
+    border-radius: 12px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.food-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.food-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px 12px 0 0;
+}
+
+.food-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.button {
+    background-color: #ff1e00;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ff5733;
+}
+
+/* Footer */
+.footer {
+    background: #000000;
+    color:#8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+
+.footer p {
+    color: #8a8a8a;
+}
+
+.footer h3 {
+    color: white;
+    margin-bottom: 20px;
+
+}
+
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-col-1 {
+    flex-basis: 30%;
+
+}
+
+.footer-col-2 {
+    flex: 1;
+    text-align: center;
+    
+}
+
+.footer-col-2 img {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.footer-col-3, .footer-col-4 {
+    flex-basis: 12%;
+    text-align: center;
+}
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-around;
+}
+.col-2 {
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.col-2 img {
+    max-width: 100%;
+    padding:50px 0;
+}
+
+.col-2 h1 {
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+.col-5 {
+    width: 160px;
+
+}
+
+.col-5 img {
+    width: 100%;
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: .3s linear;
+}
+
+.col-5 img:hover {
+    filter: grayscale(0%);
+}
+.brands {
+    margin: 100px auto;
+
+}
+.small-container {
+    max-width: auto;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+.menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .food-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .food-item {
+        width: 90%;
+    }
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center; /* Căn giữa logo theo chiều dọc */
+    justify-content: center; /* Căn giữa logo theo chiều ngang */
+    padding: 10px; /* Thêm khoảng cách xung quanh logo */
+}
+
+/* Logo */
+.logo {
+    max-width: 100px; /* Giới hạn kích thước logo */
+    height: auto; /* Đảm bảo logo giữ tỷ lệ */
+}
+.container {
+    max-width: auto;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+
+
+}
+
+/* Intro Section */
+.intro {
+    display: flex; /* Hiển thị nội dung và ảnh theo hàng ngang */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    justify-content: space-between; /* Tạo khoảng cách giữa nội dung và ảnh */
+    padding: 50px 20px;
+    background-color: #fff8f0; /* Tông màu nền nhẹ */
+}
+
+.intro-content {
+    flex: 1; /* Nội dung chiếm 1 phần */
+    padding-right: 20px; /* Thêm khoảng cách giữa nội dung và ảnh */
+}
+
+.intro-content h2 {
+    font-size: 36px;
+    color: #ff1e00; /* Màu đỏ nổi bật */
+    margin-bottom: 20px;
+}
+
+.intro-content p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.intro-content .cta-button {
+    background-color: #ff1e00;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.intro-content .cta-button:hover {
+    background-color: #ff5733;
+}
+
+.hero-image-container {
+    flex: 1; /* Ảnh chiếm 1 phần */
+    text-align: center; /* Căn giữa ảnh */
+}
+
+.hero-image {
+    max-width: 100%; /* Giới hạn chiều rộng của ảnh */
+    height: auto; /* Đảm bảo ảnh giữ tỷ lệ */
+    border-radius: 12px; /* Bo góc ảnh */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng đổ bóng */
+}
+
+/* Today Eat Section */
+.today-eat {
+    background-color: #fff8f0; /* Tông màu nền nhẹ */
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.today-eat-content h2 {
+    font-size: 36px;
+    color: #ff1e00; /* Màu đỏ nổi bật */
+    margin-bottom: 20px;
+}
+
+.today-eat-content p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.today-eat-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.today-eat-grid .food-item {
+    background-color: #fff;
+    border-radius: 12px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.today-eat-grid .food-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.today-eat-grid .food-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px 12px 0 0;
+}
+
+.today-eat-grid .food-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Today Eat Section - Image Hover Effect */
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Màu nền tối */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+}
+
+.image-container:hover .overlay {
+    opacity: 1; /* Hiển thị overlay khi hover */
+}
+
+.overlay h3 {
+    color: #fff; /* Màu chữ trắng */
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.overlay .cta-button {
+    background-color: #ff1e00;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.overlay .cta-button:hover {
+    background-color: #ff5733; /* Màu đỏ nhạt khi hover */
 }

@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grapee Food Menu - Thương mại hóa</title>
+  <link rel="stylesheet" href="css/home.css">
   <style>
     body {
       margin: 0;
@@ -116,11 +117,6 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       cursor: pointer;
     }
-    .language {
-      position: absolute;
-      top: 20px;
-      right: 100px;
-    }
     @media (max-width: 600px) {
       .product {width: 90%;}
       .submenu-item {width: 40%;}
@@ -128,21 +124,22 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <img src="https://i.imgur.com/NyV9ogK.png" alt="Grapee" />
-    <div class="language">
-      <button onclick="changeLang('vi')">VN</button>
-      <button onclick="changeLang('en')">EN</button>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="logo/nho.png" alt="Logo Grappee" class="logo">
     </div>
-  </div>
-  <div class="menu">
-    <a href="#">Trang chủ</a>
-    <a href="#">Giới thiệu</a>
-    <a href="#">Thực đơn</a>
-    <a href="#">Khuyến mãi</a>
-    <a href="#">Tuyển dụng</a>
-    <a href="#">Liên hệ</a>
-  </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="Home.html">🏠 Trang chủ</a></li>
+        <li><a href="Menu.html">🍔 Thực đơn</a></li>
+        <li><a href="#about">ℹ️ Giới thiệu</a></li>
+        <li><a href="#contact">📞 Liên hệ</a></li>
+        <li><a href="login.html">👤 Đăng nhập</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <div class="submenu">
     <div class="submenu-item">
       <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Special">
@@ -153,10 +150,28 @@
       <p>Gà giòn vui vẻ</p>
     </div>
   </div>
+  
   <div class="product-section" id="product-section">
     <!-- Sản phẩm sẽ tự động load từ JS -->
   </div>
+  
   <div class="cart-button" onclick="showCart()">🛒 <span id="cart-count">0</span> món</div>
+  
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="footer-content">
+      <h2>Liên hệ</h2>
+      <p>Email: support@grappee.com</p>
+      <p>Điện thoại: 0123 456 789</p>
+      <p>Địa chỉ: 123 Đường Ẩm Thực, Quận Hải Châu, Đà Nẵng</p>
+    </div>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+  
   <script>
     const products = [
       {name: 'Combo Family', image: 'https://i.imgur.com/We6V9PB.png'},
@@ -191,10 +206,6 @@
       let summary = Object.entries(countMap).map(([k,v])=>`${k} (${v})`).join("\n");
       if(summary) alert("Giỏ hàng của bạn:\n"+summary);
       else alert("Giỏ hàng trống");
-    }
-    function changeLang(lang) {
-      if(lang==='vi') alert('Đã chuyển sang tiếng Việt');
-      else alert('Switched to English');
     }
   </script>
 </body>
