@@ -203,3 +203,222 @@ p {
     flex-basis: 12%;
     text-align: center;
 }
+
+/* Menu Hamburger - 3 gạch */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 1000;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #ff5733;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Menu overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 991px) {
+    /* Tablet Adjustments */
+    .navbar {
+        padding: 15px;
+    }
+    
+    .navbar a {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+    
+    .contact-page {
+        padding: 40px 20px;
+    }
+    
+    .row {
+        gap: 30px;
+    }
+    
+    .col-2 {
+        flex: 1 1 350px;
+        padding: 25px;
+    }
+    
+    .contact-form h2,
+    .contact-info h2 {
+        font-size: 22px;
+    }
+    
+    .contact-info iframe {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Mobile Menu */
+    .hamburger-menu {
+        display: block;
+    }
+    
+    nav ul.nav-links {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        background-color: #fff;
+        width: 70%;
+        height: 100vh;
+        z-index: 999;
+        text-align: left;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding-top: 60px;
+    }
+    
+    nav ul.nav-links.active {
+        left: 0;
+    }
+    
+    nav ul.nav-links li {
+        margin: 0;
+        padding: 20px;
+        width: 100%;
+        border-bottom: 1px solid #eaeaea;
+    }
+    
+    nav ul.nav-links li a {
+        display: block;
+        font-size: 18px;
+        padding: 10px 0;
+    }
+    
+    /* Hamburger Animation */
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    /* Contact Form Adjustments */
+    .contact-page {
+        padding: 30px 15px;
+    }
+    
+    .row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .col-2 {
+        flex: 1 1 100%;
+        padding: 20px;
+    }
+    
+    .contact-form h2,
+    .contact-info h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .contact-form label,
+    .contact-info label {
+        margin-top: 12px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        padding: 8px;
+    }
+    
+    .contact-form .btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+    
+    .contact-info iframe {
+        height: 250px;
+    }
+    
+    /* Footer Adjustments */
+    .footer {
+        padding: 40px 15px 20px;
+    }
+    
+    .footer-col-1, 
+    .footer-col-2, 
+    .footer-col-3, 
+    .footer-col-4 {
+        min-width: 100%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Small Mobile Adjustments */
+    .navbar a {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+    
+    .logo {
+        max-width: 80px;
+    }
+    
+    .contact-page {
+        padding: 20px 10px;
+    }
+    
+    .col-2 {
+        padding: 15px;
+    }
+    
+    .contact-form h2,
+    .contact-info h2 {
+        font-size: 18px;
+    }
+    
+    .contact-form .btn {
+        width: 100%;
+    }
+    
+    .contact-info iframe {
+        height: 200px;
+    }
+    
+    .app-logo img {
+        width: 120px;
+    }
+}

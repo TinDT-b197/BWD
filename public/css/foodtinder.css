@@ -258,3 +258,171 @@ p {
     font-size: 13px;
   }
 }
+
+/* Thêm phần Menu Hamburger */
+
+/* Menu Hamburger - 3 gạch */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 1000;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #ff5733;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Menu overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Cải thiện Responsive trên tablet */
+@media screen and (max-width: 768px) {
+    /* Hiển thị nút hamburger */
+    .hamburger-menu {
+        display: block;
+    }
+    
+    /* Ẩn menu thông thường */
+    .navbar {
+        padding: 15px;
+    }
+    
+    nav ul.nav-links {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        background-color: #fff;
+        width: 70%;
+        height: 100vh;
+        z-index: 999;
+        text-align: left;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding-top: 60px;
+    }
+    
+    /* Hiển thị menu khi active */
+    nav ul.nav-links.active {
+        left: 0;
+    }
+    
+    /* Điều chỉnh các mục menu */
+    nav ul.nav-links li {
+        margin: 0;
+        padding: 20px;
+        width: 100%;
+        border-bottom: 1px solid #eaeaea;
+    }
+    
+    nav ul.nav-links li a {
+        display: block;
+        font-size: 20px;
+        padding: 10px 0;
+    }
+    
+    /* Hiệu ứng cho nút hamburger khi active */
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    /* Cải thiện card container */
+    .main-content {
+        margin: 80px auto 40px;
+    }
+    
+    .card-container {
+        width: 350px;
+        height: 480px;
+    }
+    
+    .buttons {
+        margin-right: 0;
+    }
+}
+
+/* Điều chỉnh thêm cho điện thoại nhỏ */
+@media screen and (max-width: 480px) {
+    .main-content {
+        margin: 60px auto 30px;
+    }
+    
+    .card-container {
+        width: 280px;
+        height: 380px;
+    }
+    
+    .card {
+        width: 90%;
+        height: 80%;
+    }
+    
+    .buttons {
+        margin-top: 30px;
+        gap: 15px;
+    }
+    
+    .buttons button {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+    
+    /* Footer adjustment */
+    .footer {
+        padding: 40px 0 20px;
+    }
+    
+    .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
+        min-width: 100%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+/* Điều chỉnh thêm cho màn hình siêu nhỏ */
+@media screen and (max-width: 360px) {
+    .card-container {
+        width: 240px;
+        height: 320px;
+    }
+    
+    .buttons button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}

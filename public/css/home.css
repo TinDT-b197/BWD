@@ -2,11 +2,13 @@
 body {
     margin: 0;
     font-family: "Segoe UI", sans-serif;
-    background-color: #fff8f0; /* Tông màu ấm giống Jollibee */
+    background-color: #fff8f0;
+    /* Tông màu ấm giống Jollibee */
     color: #dfc8c8;
 }
+
 nav {
-    flex:1;
+    flex: 1;
     text-align: right;
 }
 
@@ -16,18 +18,19 @@ nav ul {
 }
 
 nav ul li {
-   display: inline-block;
-   margin-right: 20px;
+    display: inline-block;
+    margin-right: 20px;
 }
 
 a {
     text-decoration: none;
-    color:#000000;
+    color: #000000;
 }
 
 p {
-    color :#555;
+    color: #555;
 }
+
 /* Header */
 .navbar {
     display: flex;
@@ -57,7 +60,8 @@ p {
 }
 
 .navbar a:hover {
-    background-color: #ff5733; /* Màu đỏ nhạt khi hover */
+    background-color: #ff5733;
+    /* Màu đỏ nhạt khi hover */
 }
 
 /* Hero Section */
@@ -98,15 +102,21 @@ p {
 
 /* Hero Section - Adjust Hero Image */
 .hero-image-container {
-    text-align: center; /* Căn giữa ảnh */
-    margin-top: 20px; /* Thêm khoảng cách giữa nội dung và ảnh */
+    text-align: center;
+    /* Căn giữa ảnh */
+    margin-top: 20px;
+    /* Thêm khoảng cách giữa nội dung và ảnh */
 }
 
 .hero-image {
-    max-width: 80%; /* Giới hạn chiều rộng của ảnh */
-    height: auto; /* Đảm bảo ảnh giữ tỷ lệ */
-    border-radius: 12px; /* Bo góc ảnh */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng đổ bóng */
+    max-width: 80%;
+    /* Giới hạn chiều rộng của ảnh */
+    height: auto;
+    /* Đảm bảo ảnh giữ tỷ lệ */
+    border-radius: 12px;
+    /* Bo góc ảnh */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Thêm hiệu ứng đổ bóng */
 }
 
 /* Featured Items */
@@ -182,7 +192,7 @@ p {
 
 .footer {
     background: #000000;
-    color:#8a8a8a;
+    color: #8a8a8a;
     font-size: 14px;
     padding: 60px 0 20px;
 }
@@ -197,7 +207,10 @@ p {
 
 }
 
-.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
+.footer-col-1,
+.footer-col-2,
+.footer-col-3,
+.footer-col-4 {
     min-width: 250px;
     margin-bottom: 20px;
 }
@@ -210,7 +223,7 @@ p {
 .footer-col-2 {
     flex: 1;
     text-align: center;
-    
+
 }
 
 .footer-col-2 img {
@@ -218,10 +231,12 @@ p {
     margin-bottom: 20px;
 }
 
-.footer-col-3, .footer-col-4 {
+.footer-col-3,
+.footer-col-4 {
     flex-basis: 12%;
     text-align: center;
 }
+
 .row {
     display: flex;
     align-items: center;
@@ -229,6 +244,7 @@ p {
     padding: 20px;
     justify-content: space-around;
 }
+
 .col-2 {
     flex-basis: 50%;
     min-width: 300px;
@@ -236,7 +252,7 @@ p {
 
 .col-2 img {
     max-width: 100%;
-    padding:50px 0;
+    padding: 50px 0;
 }
 
 .col-2 h1 {
@@ -244,6 +260,7 @@ p {
     line-height: 60px;
     margin: 25px 0;
 }
+
 .col-5 {
     width: 160px;
 
@@ -259,10 +276,12 @@ p {
 .col-5 img:hover {
     filter: grayscale(0%);
 }
+
 .brands {
     margin: 100px auto;
 
 }
+
 .small-container {
     max-width: auto;
     margin: auto;
@@ -280,43 +299,29 @@ p {
 .social-links a:hover {
     text-decoration: underline;
 }
+
 .menu-icon {
-        display: block;
-        cursor: pointer;
-    }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 36px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-    }
-
-    .food-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .food-item {
-        width: 90%;
-    }
+    display: block;
+    cursor: pointer;
 }
 
 /* Logo Container */
 .logo-container {
     display: flex;
-    align-items: center; /* Căn giữa logo theo chiều dọc */
-    justify-content: center; /* Căn giữa logo theo chiều ngang */
-    padding: 10px; /* Thêm khoảng cách xung quanh logo */
+    align-items: center;
+    /* Căn giữa logo theo chiều dọc */
+    justify-content: center;
+    /* Căn giữa logo theo chiều ngang */
+    padding: 10px;
+    /* Thêm khoảng cách xung quanh logo */
 }
 
 /* Logo */
 .logo {
-    max-width: 100px; /* Giới hạn kích thước logo */
-    height: auto; /* Đảm bảo logo giữ tỷ lệ */
+    max-width: 100px;
+    /* Giới hạn kích thước logo */
+    height: auto;
+    /* Đảm bảo logo giữ tỷ lệ */
 }
 
 
@@ -331,21 +336,28 @@ p {
 
 /* Intro Section */
 .intro {
-    display: flex; /* Hiển thị nội dung và ảnh theo hàng ngang */
-    align-items: center; /* Căn giữa nội dung theo chiều dọc */
-    justify-content: space-between; /* Tạo khoảng cách giữa nội dung và ảnh */
+    display: flex;
+    /* Hiển thị nội dung và ảnh theo hàng ngang */
+    align-items: center;
+    /* Căn giữa nội dung theo chiều dọc */
+    justify-content: space-between;
+    /* Tạo khoảng cách giữa nội dung và ảnh */
     padding: 50px 20px;
-    background-color: #fff8f0; /* Tông màu nền nhẹ */
+    background-color: #fff8f0;
+    /* Tông màu nền nhẹ */
 }
 
 .intro-content {
-    flex: 1; /* Nội dung chiếm 1 phần */
-    padding-right: 20px; /* Thêm khoảng cách giữa nội dung và ảnh */
+    flex: 1;
+    /* Nội dung chiếm 1 phần */
+    padding-right: 20px;
+    /* Thêm khoảng cách giữa nội dung và ảnh */
 }
 
 .intro-content h2 {
     font-size: 36px;
-    color: #ff1e00; /* Màu đỏ nổi bật */
+    color: #ff1e00;
+    /* Màu đỏ nổi bật */
     margin-bottom: 20px;
 }
 
@@ -371,15 +383,21 @@ p {
 }
 
 .hero-image-container {
-    flex: 1; /* Ảnh chiếm 1 phần */
-    text-align: center; /* Căn giữa ảnh */
+    flex: 1;
+    /* Ảnh chiếm 1 phần */
+    text-align: center;
+    /* Căn giữa ảnh */
 }
 
 .hero-image {
-    max-width: 100%; /* Giới hạn chiều rộng của ảnh */
-    height: auto; /* Đảm bảo ảnh giữ tỷ lệ */
-    border-radius: 12px; /* Bo góc ảnh */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng đổ bóng */
+    max-width: 100%;
+    /* Giới hạn chiều rộng của ảnh */
+    height: auto;
+    /* Đảm bảo ảnh giữ tỷ lệ */
+    border-radius: 12px;
+    /* Bo góc ảnh */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Thêm hiệu ứng đổ bóng */
 }
 
 /* Today Eat Section */
@@ -459,13 +477,15 @@ p {
     display: block;
     border-radius: 12px;
 }
+
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Màu nền tối */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Màu nền tối */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -476,11 +496,13 @@ p {
 }
 
 .image-container:hover .overlay {
-    opacity: 1; /* Hiển thị overlay khi hover */
+    opacity: 1;
+    /* Hiển thị overlay khi hover */
 }
 
 .overlay h3 {
-    color: #fff; /* Màu chữ trắng */
+    color: #fff;
+    /* Màu chữ trắng */
     font-size: 20px;
     margin-bottom: 10px;
 }
@@ -497,5 +519,321 @@ p {
 }
 
 .overlay .cta-button:hover {
-    background-color: #ff5733; /* Màu đỏ nhạt khi hover */
+    background-color: #ff5733;
 }
+
+@media screen and (max-width: 991px) {
+
+    
+    .navbar {
+        padding: 15px;
+    }
+
+    .nav-links li {
+        margin-right: 15px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    .col-2 h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+
+    .intro {
+        padding: 40px 15px;
+    }
+
+    .intro-content h2 {
+        font-size: 30px;
+    }
+
+    .intro-content p {
+        font-size: 16px;
+    }
+
+    
+    .food-grid {
+        gap: 15px;
+    }
+
+    .food-item {
+        width: 100px;
+    }
+
+    /* Điều chỉnh Today Eat section */
+    .today-eat {
+        padding: 40px 50px;
+    }
+
+    .today-eat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Đáp ứng cho thiết bị có màn hình nhỏ (smartphone) */
+@media screen and (max-width: 768px) {
+
+
+    /* Menu navbar */
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .nav-links {
+        display: none;
+        /* Ẩn menu chính trên mobile */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #fff;
+        z-index: 100;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 10px;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+    
+
+    /* Thêm nút menu hamburger */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Hero section */
+    .row {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .col-2 {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .col-2 h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .col-2 p {
+        font-size: 16px;
+    }
+
+    /* Intro section */
+    .intro {
+        flex-direction: column;
+        padding: 30px 15px;
+    }
+
+    .intro-content {
+        padding-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .hero-image-container {
+        margin-top: 20px;
+    }
+
+    /* Featured items */
+    .featured-items {
+        padding: 30px 15px;
+    }
+
+    .featured-items h2 {
+        font-size: 28px;
+    }
+
+    .food-grid {
+        justify-content: center;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .food-item {
+        width: 45%;
+        margin-bottom: 15px;
+    }
+    .food-item img {
+        height: 300px;
+    }
+
+    /* Today Eat section */
+    .today-eat {
+        flex-direction: column;
+        padding: 30px 15px;
+    }
+
+    .today-eat-content {
+        max-width: 100%;
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .today-eat-grid {
+        max-width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        height: auto;
+    }
+
+    .today-eat-grid .food-item {
+        width: 100%;
+    }
+
+    .today-eat-grid .food-item img {
+        height: 150px;
+    }
+
+    /* Brands section */
+    .brands {
+        margin: 50px auto;
+    }
+
+    .col-5 {
+        width: 80px;
+        margin-bottom: 20px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 0 20px;
+        text-align: center;
+    }
+
+    .footer-col-1,
+    .footer-col-2,
+    .footer-col-3,
+    .footer-col-4 {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+/* Menu Hamburger - 3 gạch */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 1000;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #ff1e00;
+    transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    /* Hiển thị nút hamburger */
+    .hamburger-menu {
+        display: block;
+    }
+    
+    /* Ẩn menu chính và điều chỉnh vị trí */
+    nav ul.nav-links {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        background-color: #fff;
+        width: 70%;
+        height: 100vh;
+        z-index: 999;
+        text-align: left;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding-top: 60px;
+    }
+    
+    /* Hiển thị menu khi active */
+    nav ul.nav-links.active {
+        left: 0;
+    }
+    
+    /* Điều chỉnh các mục menu */
+    nav ul.nav-links li {
+        margin: 0;
+        padding: 20px;
+        width: 100%;
+        border-bottom: 1px solid #eaeaea;
+    }
+    
+    nav ul.nav-links li a {
+        display: block;
+        font-size: 20px;
+        padding: 10px 0;
+    }
+    
+    /* Hiệu ứng cho nút hamburger khi active */
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    /* Tạo lớp overlay khi menu mở */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+    }
+    
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Ẩn nút toggle menu cũ */
+    .menu-toggle {
+        display: none;
+    }
+}
+
+

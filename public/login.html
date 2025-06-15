@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,17 +8,22 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <link rel="stylesheet" href="css/login.css" />
-    <title>Login Page | Caged coder</title>
+    <title>Đăng nhập | Grappee</title>
   </head>
 
   <body>
     <a href="Home.html" class="back-home">
-  <i class="fa-solid fa-arrow-left"></i> Back to Home
-</a>
+      <i class="fa-solid fa-arrow-left"></i> Quay lại Trang chủ
+    </a>
+    
+    <div class="logo-container">
+      <img src="logo/Logo demo.png" alt="Grappee Logo">
+    </div>
+    
     <div class="container" id="container">
       <div class="form-container sign-up">
         <form id="register-form">
-          <h1>Create Account</h1>
+          <h1>Tạo tài khoản</h1>
           <div class="social-icons">
             <a href="#" class="icon"
               ><i class="fa-brands fa-google-plus-g"></i
@@ -29,16 +34,20 @@
               ><i class="fa-brands fa-linkedin-in"></i
             ></a>
           </div>
-          <span>or use your email for registeration</span>
-          <input id="Name_register" type="text" placeholder="Name" />
-          <input id="RegisterEmail" type="email" placeholder="Email" />
-          <input id="RegisterPassword" type="password" placeholder="Password" />
-          <button type="submit">Sign Up</button>
+          <span>hoặc đăng ký bằng email</span>
+          <input id="Name_register" type="text" placeholder="Họ tên" required />
+          <input id="RegisterEmail" type="email" placeholder="Email" required />
+          <input id="RegisterPassword" type="password" placeholder="Mật khẩu" required minlength="6" />
+          <input id="ConfirmPassword" type="password" placeholder="Xác nhận mật khẩu" required />
+          <div id="password-error" style="color: #ff1e00; font-size: 14px; margin-top: 5px; display: none;">
+            Mật khẩu không khớp!
+          </div>
+          <button type="submit">Đăng ký</button>
         </form>
       </div>
       <div class="form-container sign-in">
-        <form id="login-form" onsubmit="event.preventDefault(); showNotification();">
-          <h1>Sign In</h1>
+        <form id="login-form">
+          <h1>Đăng nhập</h1>
           <div class="social-icons">
             <a href="#" class="icon"
               ><i class="fa-brands fa-google-plus-g"></i
@@ -49,26 +58,26 @@
               ><i class="fa-brands fa-linkedin-in"></i
             ></a>
           </div>
-          <span>or use your email password</span>
-          <input id="email_login" type="email" placeholder="Email" />
-          <input id="password_login" type="password" placeholder="Password" />
-          <a href="#">Forget Your Password?</a>
-          <button type="submit">Sign In</button>
+          <span>hoặc đăng nhập bằng email</span>
+          <input id="email_login" type="email" placeholder="Email" required />
+          <input id="password_login" type="password" placeholder="Mật khẩu" required />
+          <a href="#">Quên mật khẩu?</a>
+          <button type="submit">Đăng nhập</button>
         </form>
       </div>
       <div class="toggle-container">
         <div class="toggle">
           <div class="toggle-panel toggle-left">
-            <h1>Welcome Back!</h1>
-            <p>Enter your personal details to use all of site features</p>
-            <button class="hidden" id="login">Sign In</button>
+            <h1>Chào mừng trở lại!</h1>
+            <p>Đăng nhập để sử dụng tất cả tính năng của Grappee</p>
+            <button class="hidden" id="login">Đăng nhập</button>
           </div>
           <div class="toggle-panel toggle-right">
-            <h1>Hello, Friend!</h1>
+            <h1>Xin chào!</h1>
             <p>
-              Register with your personal details to use all of site features
+              Đăng ký để trải nghiệm dịch vụ đặt đồ ăn tuyệt vời của Grappee
             </p>
-            <button class="hidden" id="register">Sign Up</button>
+            <button class="hidden" id="register">Đăng ký</button>
           </div>
         </div>
       </div>
@@ -79,10 +88,8 @@
         <button onclick="redirectToHome()">Xác nhận</button>
       </div>
     </div>
-    <div id="popup" class="popup hidden">
-  <p id="popup-message"></p>
-</div>
 
+    <!-- Quan trọng: Liên kết file JavaScript bên ngoài -->
     <script src="js/login.js"></script>
   </body>
 </html>
