@@ -38,7 +38,26 @@
   </div>
   
   <div class="product-section" id="product-section">
-    <!-- Sản phẩm sẽ tự động load từ JS -->
+    <div class="product">
+      <img src="https://i.imgur.com/We6V9PB.png" alt="Combo Family">
+      <p>Combo Family</p>
+      <button class="add-btn" onclick="addToCart('Combo Family')">Thêm vào giỏ</button>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/jL2e2VJ.png" alt="Combo Cheese Burger">
+      <p>Combo Cheese Burger</p>
+      <button class="add-btn" onclick="addToCart('Combo Cheese Burger')">Thêm vào giỏ</button>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/x7UO4Dd.png" alt="Combo Gà Nướng">
+      <p>Combo Gà Nướng</p>
+      <button class="add-btn" onclick="addToCart('Combo Gà Nướng')">Thêm vào giỏ</button>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/oX1eGQy.png" alt="Pizza Hải Sản">
+      <p>Pizza Hải Sản</p>
+      <button class="add-btn" onclick="addToCart('Pizza Hải Sản')">Thêm vào giỏ</button>
+    </div>
   </div>
   
   <div class="cart-button" onclick="showCart()">🛒 <span id="cart-count">0</span> món</div>
@@ -59,12 +78,7 @@
   </footer>
   
   <script>
-    const products = [
-      {name: 'Combo Family', image: 'https://i.imgur.com/We6V9PB.png'},
-      {name: 'Combo Cheese Burger', image: 'https://i.imgur.com/jL2e2VJ.png'},
-      {name: 'Combo Gà Nướng', image: 'https://i.imgur.com/x7UO4Dd.png'},
-      {name: 'Pizza Hải Sản', image: 'https://i.imgur.com/oX1eGQy.png'}
-    ];
+   
 
     let cart = JSON.parse(localStorage.getItem('grapeeCart')) || [];
     document.getElementById('cart-count').innerText = cart.length;
