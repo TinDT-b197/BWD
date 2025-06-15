@@ -308,6 +308,8 @@ p {
     max-width: 100px; /* Giới hạn kích thước logo */
     height: auto; /* Đảm bảo logo giữ tỷ lệ */
 }
+
+
 .container {
     max-width: auto;
     margin: auto;
