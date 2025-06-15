@@ -153,6 +153,15 @@ p {
     border: none;
     border-radius: 10px;
 }
+.app-logo {
+    margin-top: 20px;
+
+}
+
+.app-logo img {
+    width: 140px;
+}
+
 .footer {
     background: #000000;
     color:#8a8a8a;

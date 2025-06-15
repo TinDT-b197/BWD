@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grapee Food Menu - Thương mại hóa</title>
+  <title>Grappee</title>
   <link rel="stylesheet" href="css/menu.css">
- 
+
 </head>
+
 <body>
   <!-- Header -->
   <header>
     <div class="container">
-    <div class="navbar">
-    <div class="logo">
-      <a href="Home.html"> <img src="logo/Logo demo.png" width="100" alt=""></a>   
-    </div>
-    <nav>
-      <ul class="nav-links">            
-        <li><a href="Home.html">🏠 Trang chủ</a></li>
-        <li><a href="Menu.html">🍔 Thực đơn</a></li>
-        <li><a href="foodtinder.html">ℹ️ Food Tinder</a></li>
-        <li><a href="contact.html">📞 Liên hệ</a></li>
-        <li><a href="login.html">👤 Đăng nhập</a></li>
-      </ul>
-    </nav>
+      <div class="navbar">
+        <div class="logo">
+          <a href="Home.html"> <img src="logo/Logo demo.png" width="100" alt=""></a>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="Home.html">🏠 Trang chủ</a></li>
+            <li><a href="Menu.html">🍔 Thực đơn</a></li>
+            <li><a href="foodtinder.html">ℹ️ Food Tinder</a></li>
+            <li><a href="contact.html">📞 Liên hệ</a></li>
+            <li><a href="login.html">👤 Đăng nhập</a></li>
+          </ul>
+        </nav>
   </header>
 
   <div class="submenu">
@@ -36,7 +38,7 @@
       <p>Gà giòn vui vẻ</p>
     </div>
   </div>
-  
+
   <div class="product-section" id="product-section">
     <div class="product">
       <img src="https://i.imgur.com/We6V9PB.png" alt="Combo Family">
@@ -59,26 +61,51 @@
       <button class="add-btn" onclick="addToCart('Pizza Hải Sản')">Thêm vào giỏ</button>
     </div>
   </div>
-  
+
   <div class="cart-button" onclick="showCart()">🛒 <span id="cart-count">0</span> món</div>
-  
+
   <!-- Footer -->
-  <footer id="contact" class="footer">
-    <div class="footer-content">
-      <h2>Liên hệ</h2>
-      <p>Email: support@grappee.com</p>
-      <p>Điện thoại: 0123 456 789</p>
-      <p>Địa chỉ: 123 Đường Ẩm Thực, Quận Hải Châu, Đà Nẵng</p>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col-1">
+          <h3>Download Our App</h3>
+          <p>Download App for Android and IOS mobile phone.</p>
+          <div class="app-logo">
+            <img src="logo/play-store.png" alt="">
+            <img src="logo/app-store.png" alt="">
+          </div>
+        </div>
+        <div class="footer-col-2">
+          <img src="logo/Logo demo.png" ">
+                    <p>Our aim is to make the fun and benefits of pets accessible to many people in a sustainable way.</p>
+                </div>
+                <div class=" footer-col-3">
+          <h3>Useful Links</h3>
+          <ul>
+            <li>Coupons</li>
+            <li>Blog Post</li>
+            <li>Return Policy</li>
+            <li>Join Affiliate</li>
+          </ul>
+        </div>
+        <div class="footer-col-4">
+          <h3>Follow Us</h3>
+          <ul>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Instagram</li>
+            <li>Youtube</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">Copyright 2025</p>
     </div>
-    <div class="social-links">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">Twitter</a>
-    </div>
-  </footer>
-  
+  </div>
+
   <script>
-   
+
 
     let cart = JSON.parse(localStorage.getItem('grapeeCart')) || [];
     document.getElementById('cart-count').innerText = cart.length;
@@ -102,11 +129,12 @@
     }
     function showCart() {
       let countMap = {};
-      cart.forEach(item => countMap[item] = (countMap[item]||0)+1);
-      let summary = Object.entries(countMap).map(([k,v])=>`${k} (${v})`).join("\n");
-      if(summary) alert("Giỏ hàng của bạn:\n"+summary);
+      cart.forEach(item => countMap[item] = (countMap[item] || 0) + 1);
+      let summary = Object.entries(countMap).map(([k, v]) => `${k} (${v})`).join("\n");
+      if (summary) alert("Giỏ hàng của bạn:\n" + summary);
       else alert("Giỏ hàng trống");
     }
   </script>
 </body>
+
 </html>
